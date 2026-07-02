@@ -1,11 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assests/favicon.png"
+    />
+    <link rel="shortcut icon" href="./assests/favicon.png" />
+    <link rel="apple-touch-icon" href="./assests/favicon.png" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="./scripts/state.js" defer></script>
+    <script src="./scripts/utils.js" defer></script>
+    <script src="./scripts/api.js" defer></script>
+    <script src="./scripts/templates.js" defer></script>
+    <script src="./scripts/dialog.js" defer></script>
+    <script src="./scripts/render.js" defer></script>
+    <script src="./scripts/search.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+  </head>
+
+  <body onload="init()">
+    <header class="pokedexHeader">
+      <div class="headerInner">
+        <a class="headerLogoLink" href="index.html">
+          <div class="logoCircle"></div>
+          <h1>Pokédex</h1>
+        </a>
+
+        <div class="searchBox">
+          <input
+            data-id="search-input"
+            id="searchInput"
+            type="text"
+            placeholder="Search Pokémon..."
+          />
+          <button data-id="search-button" id="searchButton">Search</button>
+        </div>
+      </div>
+    </header>
+
+    <main data-id="content" class="pokedexContainer">
+      <section id="pokemonGrid" class="pokemonGrid"></section>
+
+      <div id="loadingScreen" class="loadingScreen hidden">
+        Loading Pokémon...
+      </div>
+
+      <button
+        data-id="load-more-button"
+        id="loadMoreButton"
+        class="loadMoreButton"
+      >
+        Load More
+      </button>
+    </main>
+
+    <dialog data-id="dialog" id="pokemonDialog" class="pokemonDialog"></dialog>
+  </body>
 </html>
