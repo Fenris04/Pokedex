@@ -15,9 +15,15 @@ body.dialogOpen {
 }
 
 .pokedexHeader {
-  background: #e53935;
-  color: white;
-  padding: 24px;
+    width: 100%;
+    background: #e53935;
+}
+
+.headerInner {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 .headerInner,
@@ -26,6 +32,7 @@ body.dialogOpen {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
+  padding: 0 32px;
 }
 
 .headerInner {
@@ -90,7 +97,8 @@ body.dialogOpen {
 }
 
 .pokedexContainer {
-  padding: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .pokemonGrid {
@@ -424,14 +432,10 @@ body.dialogOpen {
 }
 
 .footerInner {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 20px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    height: 70px;
 }
 
 .footerInner p {
