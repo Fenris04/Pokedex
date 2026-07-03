@@ -26,13 +26,17 @@ async function fetchPokemonById(id) {
     return data;
 }
 
-async function fetchSpeciesById(id) {
-    if (state.speciesCache.has(id)) return state.speciesCache.get(id);
+async function fetchSpeciesByPokemon(pokemon) {
+    const speciesUrl = pokemon.species.url;
 
-    const response = await fetch(`${baseUrl}/pokemon-species/${id}`);
+    if (state.speciesCache.has(speciesUrl)) {
+        return state.speciesCache.get(speciesUrl);
+    }
+
+    const response = await fetch(speciesUrl);
     const data = await response.json();
 
-    state.speciesCache.set(id, data);
+    state.speciesCache.set(speciesUrl, data);
     return data;
 }
 

@@ -2,7 +2,7 @@ const dialog = document.getElementById("pokemonDialog");
 
 async function openDialog(id) {
     const pokemon = await fetchPokemonById(id);
-    const species = await fetchSpeciesById(id);
+    const species = await fetchSpeciesByPokemon(pokemon);
 
     state.currentDialogIndex = getPokemonIndex(id);
     dialog.innerHTML = dialogTemplate(pokemon, getFlavorText(species));
