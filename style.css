@@ -454,10 +454,27 @@ body.dialogOpen {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     text-align: center;
+    align-items: stretch;
 }
 
-.pokemonInfoGrid div {
-    border-right: 1px solid #ddd;
+.pokemonInfoGrid > div {
+    height: 96px;
+    min-height: 96px;
+    max-height: 96px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pokemonInfoGrid > div strong {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    font-size: 0.95rem;
 }
 
 .pokemonInfoGrid div:last-child {
@@ -624,6 +641,16 @@ body.dialogOpen {
     .pokemonGrid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .pokemonInfoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .pokemonInfoGrid > div {
+        height: 90px;
+        min-height: 90px;
+        max-height: 90px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -640,13 +667,6 @@ body.dialogOpen {
         padding-left: 0;
     }
 
-    .pokemonInfoGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .pokemonInfoGrid div {
-        border-right: none;
-    }
 }
 
 @media (max-width: 768px) {
@@ -711,6 +731,20 @@ body.dialogOpen {
         background: white;
         padding-top: 16px;
     }
+    
+     .pokemonInfoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .pokemonInfoGrid div {
+        min-height: 80px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .pokemonInfoGrid div:last-child {
+        border-bottom: none;
+    } 
 }
 
 @media (max-width: 700px) {
