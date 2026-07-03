@@ -34,14 +34,34 @@
           <h1>Pokédex</h1>
         </a>
 
-        <div class="searchBox">
-          <input
-            data-id="search-input"
-            id="searchInput"
-            type="text"
-            placeholder="Search Pokémon..."
-          />
-          <button data-id="search-button" id="searchButton">Search</button>
+        <div class="searchArea">
+          <div class="searchBox">
+            <div class="searchWrapper">
+              <input
+                id="searchInput"
+                data-id="search-input"
+                type="text"
+                placeholder="Search Pokémon..."
+              />
+
+              <button
+                id="clearSearchButton"
+                class="clearSearchButton hidden"
+                type="button"
+                aria-label="Clear search"
+              >
+                ×
+              </button>
+
+              <p id="searchHint" class="searchHint hidden">
+                Please enter at least 3 characters.
+              </p>
+            </div>
+
+            <button id="searchButton" data-id="search-button" disabled>
+              Search
+            </button>
+          </div>
         </div>
       </div>
     </header>

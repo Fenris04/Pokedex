@@ -3,7 +3,9 @@ const searchInput = document.getElementById("searchInput");
 async function searchPokemon() {
     const query = searchInput.value.trim().toLowerCase();
 
-    if (query.length < 3) return;
+    if (query.length < 3) {
+    return;
+    }
     const matches = await getSearchMatches(query);
 
     handleSearchResults(matches);
